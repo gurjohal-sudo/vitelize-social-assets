@@ -9,6 +9,8 @@ Each spec:
     {"type":"list", "title":"...", "items":["...", "..."], "mark":"check"|"cross", "hold":4.5}
     {"type":"stat", "value":"13M+", "label":"...", "source":"...", "hold":4.5}
     {"type":"cta",  "hold":4.5}
+  Optional audio: "music": true adds the generated music bed; "vo" on any scene adds a voiceover line
+  (scene length stretches to fit); "voice": "ryan" (male, default) or "lessac" (female); "speed": 1.05.
 Content stays inside the Reels safe area (x 72 to 950, y 300 to 1500).
 """
 import json, sys, html, re, pathlib, subprocess
@@ -99,26 +101,49 @@ function setTime(t){{
 </script></body></html>'''
     return doc, total
 
+def prepare_audio(spec):
+    """Generate voiceover per scene, stretch scene holds to fit, return (vo_clips) with absolute start times."""
+    import audio
+    scenes = spec["scenes"]
+    if not any(s["type"] == "cta" for s in scenes):
+        scenes.append({"type": "cta", "hold": 4.5})
+    clips, t = [], 0.0
+    voice = spec.get("voice", "ryan")
+    for s in scenes:
+        if s.get("vo"):
+            x = audio.tts(s["vo"], voice, spec.get("speed", 1.05))
+            s["hold"] = max(float(s.get("hold", 4.0)), len(x) / audio.SR + 0.9)
+            clips.append((t + 0.35, x))
+        t += float(s.get("hold", 4.0))
+    return clips
+
 def main(spec_path, out_dir):
+    sys.path.insert(0, str(HERE))
     out = pathlib.Path(out_dir).resolve(); out.mkdir(parents=True, exist_ok=True)
     with sync_playwright() as p:
         br = p.chromium.launch(); pg = br.new_page(viewport={"width": W, "height": H})
         for spec in json.load(open(spec_path)):
+            clips = prepare_audio(spec) if (spec.get("music") or any(s.get("vo") for s in spec["scenes"])) else None
             doc, total = build(spec)
             f = out / "_reel.html"; f.write_text(doc)
             pg.goto(f.as_uri()); pg.wait_for_load_state("networkidle"); pg.evaluate("document.fonts.ready")
             mp4 = out / f"{spec['id']}.mp4"
-            cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "image2pipe", "-framerate", str(FPS), "-i", "-",
-                   "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=44100",
+            if clips is not None:
+                import audio
+                wav = out / "_audio.wav"; wav.write_bytes(audio.mix(total, clips, with_music=spec.get("music", False)))
+                ain = ["-i", str(wav)]
+            else:
+                ain = ["-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=44100"]
+            cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "image2pipe", "-framerate", str(FPS), "-i", "-", *ain,
                    "-shortest", "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p",
-                   "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart", str(mp4)]
+                   "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", str(mp4)]
             ff_proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
-            frames = int(round(total * FPS))
-            for i in range(frames):
+            for i in range(int(round(total * FPS))):
                 pg.evaluate(f"setTime({i / FPS})")
                 ff_proc.stdin.write(pg.screenshot(type="png"))
             ff_proc.stdin.close(); ff_proc.wait()
             pg.evaluate("setTime(2.8)"); pg.screenshot(path=str(out / f"{spec['id']}_cover.jpg"), type="jpeg", quality=90)
+            (out / "_audio.wav").unlink(missing_ok=True)
             print(spec["id"], f"{total:.1f}s", "ok" if ff_proc.returncode == 0 else "FFMPEG ERROR")
         br.close(); (out / "_reel.html").unlink(missing_ok=True)
 
