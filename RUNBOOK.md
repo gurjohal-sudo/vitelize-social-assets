@@ -17,3 +17,15 @@ Purpose: attach a branded 1080 x 1350 image to each Vitelize Health Facebook pos
 5. Commit and push `posts/` and `specs/` to `main`. Confirm each image returns HTTP 200 at `https://raw.githubusercontent.com/gurjohal-sudo/vitelize-social-assets/main/posts/<id>.png`.
 6. For each post, call Metricool updateScheduledPost with the post's full original content unchanged, adding the image URL to `media` and a one-sentence description to `mediaAltText`. Never change text, date, time or autoPublish.
 7. Send Gur a short summary: dates covered, headline used for each image, anything skipped or failed.
+
+## Reels (two per week)
+
+1. From the week's posts, pick the two with the strongest hooks or lists for Reels (prefer one Peptide Program post and, from November 11 onward, one GLP-1 plus Training post). Skip any post that is already a Reel. All other posts get images as above.
+2. Extra install: `pip install --break-system-packages kokoro-onnx soundfile`. The voice model downloads on first use from Hugging Face into `tools/voices/` (git-ignored, never commit it).
+3. Write `reel_specs/<post-date>.json` in the format at the top of `tools/render_reel.py`, following `reel_specs/2026-10-26.json` as the approved model:
+   * `"music": true`, `"voice": "bf_emma"`, `"speed": 0.95`.
+   * `"intro_vo"` is always exactly: "Partnering with select operators. Recurring monthly revenue. No clinical burden, and a foothold in metabolic health." No other voiceover anywhere.
+   * Scenes: hook, one or two lists, a closing hook, then cta. Use only the post's own words. 18 to 25 seconds total.
+4. Render: `python3 tools/render_reel.py reel_specs/<post-date>.json reels`. Check sample frames (ffmpeg) before publishing.
+5. Push `reels/<date>.mp4` and `reels/<date>_cover.jpg`, confirm both return HTTP 200 on raw.githubusercontent.com.
+6. In Metricool, update the post with its full original text unchanged, `media` = the mp4 raw URL, `videoThumbnailUrl` = the cover raw URL, `mediaAltText` = [], and `facebookData` = {"type": "REEL"}.
