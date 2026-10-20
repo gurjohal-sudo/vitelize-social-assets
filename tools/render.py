@@ -9,6 +9,8 @@ specs.json is a list of objects:
   body       one or two sentences (optional)
   tiles      up to 4 short labels (optional)
   stat       {"value": "13M+", "label": "...", "source": "..."} (optional, replaces tiles)
+  columns    [{"title": "ON OUR MENU", "items": [...], "mark": "check"|"cross"}, ...] up to 2 (optional, replaces tiles)
+  note       one short line under the columns (optional)
   tag        top-right pill text (optional, default "PARTNER PROGRAM")
   accent     hex (optional, default orange #F16422)
 Output: <out_dir>/<id>.png at 1080 x 1350.
@@ -22,6 +24,7 @@ DISCLOSURE = {
     "glp1": "All therapy is prescribed by licensed clinicians only where clinically appropriate. Available in eligible U.S. states. Partner earnings are not guaranteed.",
     "both": "All therapy is prescribed by licensed clinicians only where clinically appropriate. Compounded medications are not FDA-approved. Available in eligible U.S. states.",
 }
+CROSS = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#D9531A" stroke-width="2.6" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg>'
 CHECK = '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#2B8C82" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>'
 
 def font_face(name, file, weight):
@@ -60,6 +63,15 @@ def build(spec):
             <div style="font-family:Montserrat;font-weight:700;font-size:28px;line-height:1.3;color:#131313">{html.escape(stat["label"])}</div>
             <div style="font-size:17px;line-height:1.4;color:#4A5352">{html.escape(stat.get("source",""))}</div>
           </div></div>'''
+    elif spec.get("columns"):
+        cols = []
+        for c in spec["columns"][:2]:
+            mark = CROSS if c.get("mark") == "cross" else CHECK.replace('width="34" height="34"', 'width="30" height="30"')
+            dark = c.get("mark") == "cross"
+            rows = "".join(f'<div style="display:flex;align-items:center;gap:14px;padding:11px 0;border-top:1px solid {"#DCC9BF" if dark else "#CDD5D3"}">{mark}<div style="font-family:Montserrat;font-weight:700;font-size:25px;color:#131313;line-height:1.2">{html.escape(i)}</div></div>' for i in c["items"])
+            cols.append(f'<div style="background:{"#FBEFE8" if dark else "#E6EBEA"};border-radius:16px;padding:24px 26px 14px;min-width:0"><div style="font-family:Montserrat;font-weight:700;font-size:19px;letter-spacing:3px;color:{"#B4441A" if dark else "#1E6E66"};margin-bottom:8px">{html.escape(c["title"])}</div>{rows}</div>')
+        note = f'<div style="font-size:19px;line-height:1.45;color:#4A5352;margin-top:14px">{html.escape(spec["note"])}</div>' if spec.get("note") else ""
+        block = f'<div><div style="display:grid;grid-template-columns:repeat({len(cols)},minmax(0,1fr));gap:16px">{"".join(cols)}</div>{note}</div>'
     elif tiles:
         cells = "".join(f'<div style="background:#E6EBEA;border-radius:14px;padding:24px 28px;display:flex;align-items:center;gap:18px">{CHECK}<div style="font-family:Montserrat;font-weight:700;font-size:28px;color:#131313">{html.escape(t)}</div></div>' for t in tiles[:4])
         block = f'<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px">{cells}</div>'

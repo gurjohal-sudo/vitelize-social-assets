@@ -1,9 +1,49 @@
-[{"id":"2026-10-26","program":"peptide","music":true,"voice":"bf_emma","speed":0.95,
- "intro_vo":"Partnering with select operators. Recurring monthly revenue. No clinical burden, and a foothold in metabolic health.",
- "scenes":[
- {"type":"hook","eyebrow":"FOR GYM AND STUDIO OWNERS","headline":"\"Research use only\" [[isn't a safety label.]]","hold":3.5},
- {"type":"list","title":"Where many of your members buy peptides online:","items":["No physician","No prescription","No quality testing"],"mark":"cross","hold":4.5},
- {"type":"list","title":"The Vitelize Peptide Program:","items":["Licensed clinician evaluation","An individual prescription","Licensed U.S. pharmacies","Certificate of analysis"],"mark":"check","hold":5.0},
- {"type":"hook","eyebrow":"PEPTIDE PARTNER PROGRAM","headline":"Give your members a safe option [[with your name on it.]]","hold":3.5},
- {"type":"cta","hold":5.0}
-]}]
+[
+ {
+  "id": "2026-10-26",
+  "program": "peptide",
+  "music": true,
+  "scenes": [
+   {
+    "type": "hook",
+    "eyebrow": "FOR GYM AND STUDIO OWNERS",
+    "headline": "\"Research use only\" [[isn't a safety label.]]",
+    "hold": 3.5
+   },
+   {
+    "type": "list",
+    "title": "Where many of your members buy peptides online:",
+    "items": [
+     "No physician",
+     "No prescription",
+     "No quality testing"
+    ],
+    "mark": "cross",
+    "hold": 4.5
+   },
+   {
+    "type": "list",
+    "title": "The Vitelize Peptide Program:",
+    "items": [
+     "Licensed clinician evaluation",
+     "An individual prescription",
+     "Licensed U.S. pharmacies",
+     "Certificate of analysis"
+    ],
+    "mark": "check",
+    "hold": 5.0
+   },
+   {
+    "type": "hook",
+    "eyebrow": "PEPTIDE PARTNER PROGRAM",
+    "headline": "Give your members a safe option [[with your name on it.]]",
+    "hold": 3.5
+   },
+   {
+    "type": "cta",
+    "hold": 5.0
+   }
+  ],
+  "music_style": "drive"
+ }
+]

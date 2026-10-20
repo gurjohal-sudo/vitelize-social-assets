@@ -132,7 +132,7 @@ def main(spec_path, out_dir):
             mp4 = out / f"{spec['id']}.mp4"
             if clips is not None:
                 import audio
-                wav = out / "_audio.wav"; wav.write_bytes(audio.mix(total, clips, with_music=spec.get("music", False)))
+                wav = out / "_audio.wav"; wav.write_bytes(audio.mix(total, clips, with_music=spec.get("music", False), style=spec.get("music_style", "drive")))
                 ain = ["-i", str(wav)]
             else:
                 ain = ["-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=44100"]

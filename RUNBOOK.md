@@ -13,6 +13,7 @@ Purpose: attach a branded 1080 x 1350 image to each Vitelize Health Facebook pos
    * Body: at most 2 short sentences, drawn only from the post text. Optional.
    * Use `tiles` (up to 4, max 3 words each) when the post lists benefits, steps or options; use `stat` only when the post itself cites a statistic, copying the figure and source exactly.
    * Never add claims, numbers, drug brand names, compound names, prices, revenue-share percentages, or competitor names that are not in the post. No em or en dashes.
+   * Compound names may appear on an image only when the post itself lists them (the formulary and exclusion posts). Never pair a compound with a benefit, result or dose.
 4. Render: `python3 tools/render.py specs/<monday-date>.json posts`. Any line printing OVERFLOW must be shortened and re-rendered. View every image before publishing it.
 5. Commit and push `posts/` and `specs/` to `main`. Confirm each image returns HTTP 200 at `https://raw.githubusercontent.com/gurjohal-sudo/vitelize-social-assets/main/posts/<id>.png`.
 6. For each post, call Metricool updateScheduledPost with the post's full original content unchanged, adding the image URL to `media` and a one-sentence description to `mediaAltText`. Never change text, date, time or autoPublish.
@@ -21,11 +22,11 @@ Purpose: attach a branded 1080 x 1350 image to each Vitelize Health Facebook pos
 ## Reels (two per week)
 
 1. From the week's posts, pick the two with the strongest hooks or lists for Reels (prefer one Peptide Program post and, from November 11 onward, one GLP-1 plus Training post). Skip any post that is already a Reel. All other posts get images as above.
-2. Extra install: `pip install --break-system-packages kokoro-onnx soundfile`. The voice model downloads on first use from Hugging Face into `tools/voices/` (git-ignored, never commit it).
+2. Extra install: `pip install --break-system-packages soundfile numpy`. No voice model is needed.
 3. Write `reel_specs/<post-date>.json` in the format at the top of `tools/render_reel.py`, following `reel_specs/2026-10-26.json` as the approved model:
-   * `"music": true`, `"voice": "bf_emma"`, `"speed": 0.95`.
-   * `"intro_vo"` is always exactly: "Partnering with select operators. Recurring monthly revenue. No clinical burden, and a foothold in metabolic health." No other voiceover anywhere.
+   * `"music": true`, `"music_style": "drive"` (the high-energy 128 BPM bed in `tools/audio.py`).
+   * No voiceover of any kind: never add `intro_vo` or a scene `vo`.
    * Scenes: hook, one or two lists, a closing hook, then cta. Use only the post's own words. 18 to 25 seconds total.
 4. Render: `python3 tools/render_reel.py reel_specs/<post-date>.json reels`. Check sample frames (ffmpeg) before publishing.
-5. Push `reels/<date>.mp4` and `reels/<date>_cover.jpg`, confirm both return HTTP 200 on raw.githubusercontent.com.
+5. Push `reels/<date>.mp4` and `reels/<date>_cover.jpg` (when replacing a Reel already attached in Metricool, use a new file name such as `<date>_v2.mp4`, because Metricool keeps its own copy), confirm both return HTTP 200 on raw.githubusercontent.com.
 6. In Metricool, update the post with its full original text unchanged, `media` = the mp4 raw URL, `videoThumbnailUrl` = the cover raw URL, `mediaAltText` = [], and `facebookData` = {"type": "REEL"}.
