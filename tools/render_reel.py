@@ -57,7 +57,7 @@ def build(spec):
             body.append(el(html.escape(s["title"]), a + 0.1, b, f"font-family:Montserrat;font-weight:800;font-size:64px;line-height:1.1;letter-spacing:-1px;color:{INK}"))
             icon = CROSS if s.get("mark") == "cross" else CHECK
             for i, item in enumerate(s["items"][:5]):
-                body.append(el(f'{icon}<div>{html.escape(item)}</div>', a + 0.6 + 0.55 * i, b,
+                body.append(el(f'{icon}<div>{html.escape(item)}</div>', a + (float(s["item_times"][i]) if s.get("item_times") else float(s.get("first", 0.6)) + float(s.get("stagger", 0.55)) * i), b,
                                "display:flex;align-items:center;gap:26px;background:#E6EBEA;border-radius:20px;padding:30px 34px;font-family:Montserrat;font-weight:700;font-size:44px;line-height:1.2;color:#131313"))
         elif s["type"] == "stat":
             body.append(el(html.escape(s["value"]), a + 0.1, b, f"font-family:Montserrat;font-weight:800;font-size:260px;line-height:1;letter-spacing:-6px;color:{ORANGE}"))
