@@ -24,8 +24,36 @@ def _voice_path(name):
             urllib.request.urlretrieve(f"https://huggingface.co/rhasspy/piper-voices/resolve/main/{rel}{ext}", f)
     return base.with_suffix(".onnx")
 
-def tts(text, voice="ryan", speed=1.0):
-    """Return mono float32 audio at SR for the given text."""
+KOKORO = "https://huggingface.co/onnx-community/Kokoro-82M-v1.0-ONNX/resolve/main"
+_kokoro = None
+
+def _kokoro_engine(voice):
+    """Natural neural voices (Kokoro 82M, Apache-2.0). British female: bf_emma (default), bf_isabella, bf_alice, bf_lily."""
+    global _kokoro
+    d = HERE / "voices" / "kokoro"; d.mkdir(parents=True, exist_ok=True)
+    if not (d / "model.onnx").exists():
+        urllib.request.urlretrieve(f"{KOKORO}/onnx/model.onnx", d / "model.onnx")
+    if not (d / f"{voice}.bin").exists():
+        urllib.request.urlretrieve(f"{KOKORO}/voices/{voice}.bin", d / f"{voice}.bin")
+    bins = {f.stem: np.fromfile(f, dtype=np.float32).reshape(-1, 1, 256) for f in d.glob("*.bin")}
+    np.savez(d / "voices.npz", **bins)
+    from kokoro_onnx import Kokoro
+    _kokoro = Kokoro(str(d / "model.onnx"), str(d / "voices.npz"))
+    return _kokoro
+
+def tts(text, voice="bf_emma", speed=0.95):
+    """Return mono float32 audio at SR. Kokoro voices (bf_*, bm_*, af_*, am_*) are the default; "ryan"/"lessac" use Piper."""
+    if voice not in VOICES:
+        for k, v in PRONOUNCE.items():
+            text = text.replace(k, v)
+        eng = _kokoro if _kokoro is not None else _kokoro_engine(voice)
+        lang = "en-gb" if voice.startswith("b") else "en-us"
+        parts = []
+        for sent in [x.strip() for x in __import__("re").split(r"(?<=[.!?])\s+", text) if x.strip()]:
+            a, sr = eng.create(sent, voice=voice, speed=speed, lang=lang)
+            parts += [a.astype(np.float32), np.zeros(int(0.22 * sr), np.float32)]
+        x = np.concatenate(parts[:-1]) if parts else np.zeros(1, np.float32)
+        return np.interp(np.linspace(0, len(x), int(len(x) * SR / sr), endpoint=False), np.arange(len(x)), x).astype(np.float32)
     for k, v in PRONOUNCE.items():
         text = text.replace(k, v)
     model = _voice_path(voice)
@@ -73,7 +101,7 @@ def music(duration, bpm=96, seed=7):
     fade = int(1.5 * SR); out[-fade:] *= np.linspace(1, 0, fade); out[:int(0.5 * SR)] *= np.linspace(0, 1, int(0.5 * SR))
     return out / max(1e-6, np.abs(out).max()) * 0.9
 
-def mix(duration, vo_clips, with_music=True, music_db=-20, duck_db=-8):
+def mix(duration, vo_clips, with_music=True, music_db=-23, duck_db=-8):
     """vo_clips: list of (start_seconds, audio). Returns stereo int16 wav bytes."""
     n = int(duration * SR); vo = np.zeros(n, np.float32)
     for st, clip in vo_clips:

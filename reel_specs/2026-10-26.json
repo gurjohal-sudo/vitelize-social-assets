@@ -1,7 +1,7 @@
-[{"id":"2026-10-26","program":"peptide","music":true,"voice":"ryan","scenes":[
- {"type":"hook","eyebrow":"FOR GYM AND STUDIO OWNERS","headline":"\"Research use only\" [[isn't a safety label.]]","hold":3.5,"vo":"Research use only is not a safety label."},
- {"type":"list","title":"Where many of your members buy peptides online:","items":["No physician","No prescription","No quality testing"],"mark":"cross","hold":4.5,"vo":"A lot of the peptides your members find online come with no physician, no prescription, and no quality testing."},
- {"type":"list","title":"The Vitelize Peptide Program:","items":["Licensed clinician evaluation","An individual prescription","Licensed U.S. pharmacies","Certificate of analysis"],"mark":"check","hold":5.0,"vo":"The Vitelize Peptide Program runs the other way. A licensed clinician evaluation, an individual prescription, and licensed U.S. pharmacies with a certificate of analysis."},
- {"type":"hook","eyebrow":"PEPTIDE PARTNER PROGRAM","headline":"Give your members a safe option [[with your name on it.]]","hold":3.5,"vo":"Give your members a safe option, with your name on it."},
- {"type":"cta","hold":5.0,"vo":"Book a fifteen minute partner call at info@vitelizehealth.com. Compounded medications are not FDA approved."}
+[{"id":"2026-10-26","program":"peptide","music":true,"voice":"bf_emma","speed":0.95,"scenes":[
+ {"type":"hook","eyebrow":"FOR GYM AND STUDIO OWNERS","headline":"\"Research use only\" [[isn't a safety label.]]","hold":3.5,"vo":"Research use only... isn't a safety label."},
+ {"type":"list","title":"Where many of your members buy peptides online:","items":["No physician","No prescription","No quality testing"],"mark":"cross","hold":4.5,"vo":"Many of the peptides your members buy online come with no physician, no prescription, and no quality testing."},
+ {"type":"list","title":"The Vitelize Peptide Program:","items":["Licensed clinician evaluation","An individual prescription","Licensed U.S. pharmacies","Certificate of analysis"],"mark":"check","hold":5.0,"vo":"Our Peptide Program works the other way. Every member gets a licensed clinician evaluation, an individual prescription, and medication from licensed U.S. pharmacies, with a certificate of analysis."},
+ {"type":"hook","eyebrow":"PEPTIDE PARTNER PROGRAM","headline":"Give your members a safe option [[with your name on it.]]","hold":3.5,"vo":"So give your members a safe option, with your name on it."},
+ {"type":"cta","hold":5.0,"vo":"Book a fifteen-minute partner call, at info@vitelizehealth.com. Compounded medications are not FDA-approved."}
 ]}]

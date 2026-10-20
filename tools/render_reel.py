@@ -10,7 +10,7 @@ Each spec:
     {"type":"stat", "value":"13M+", "label":"...", "source":"...", "hold":4.5}
     {"type":"cta",  "hold":4.5}
   Optional audio: "music": true adds the generated music bed; "vo" on any scene adds a voiceover line
-  (scene length stretches to fit); "voice": "ryan" (male, default) or "lessac" (female); "speed": 1.05.
+  (scene length stretches to fit); "voice": "bf_emma" (British female, default; also bf_isabella, bf_alice, bf_lily, bm_george); "speed": 0.95.
 Content stays inside the Reels safe area (x 72 to 950, y 300 to 1500).
 """
 import json, sys, html, re, pathlib, subprocess
@@ -108,10 +108,10 @@ def prepare_audio(spec):
     if not any(s["type"] == "cta" for s in scenes):
         scenes.append({"type": "cta", "hold": 4.5})
     clips, t = [], 0.0
-    voice = spec.get("voice", "ryan")
+    voice = spec.get("voice", "bf_emma")
     for s in scenes:
         if s.get("vo"):
-            x = audio.tts(s["vo"], voice, spec.get("speed", 1.05))
+            x = audio.tts(s["vo"], voice, spec.get("speed", 0.95))
             s["hold"] = max(float(s.get("hold", 4.0)), len(x) / audio.SR + 0.9)
             clips.append((t + 0.35, x))
         t += float(s.get("hold", 4.0))
