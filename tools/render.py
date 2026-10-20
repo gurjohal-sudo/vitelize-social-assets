@@ -11,6 +11,8 @@ specs.json is a list of objects:
   stat       {"value": "13M+", "label": "...", "source": "..."} (optional, replaces tiles)
   columns    [{"title": "ON OUR MENU", "items": [...], "mark": "check"|"cross"}, ...] up to 2 (optional, replaces tiles)
   note       one short line under the columns (optional)
+  people     [{"photo": "team-craig.jpg", "name": "...", "role": "...", "points": [...], "line": "..."}]
+             1 person (points) or 3 people (line), photos from tools/people/ (optional, replaces tiles)
   tag        top-right pill text (optional, default "PARTNER PROGRAM")
   accent     hex (optional, default orange #F16422)
 Output: <out_dir>/<id>.png at 1080 x 1350.
@@ -50,6 +52,30 @@ def headline_size(text, has_block):
     else: s = 68
     return s - (6 if has_block else 0)
 
+def people_block(ppl):
+    """One person: photo card with credential rows. Three people: photo cards side by side."""
+    esc = html.escape
+    if len(ppl) == 1:
+        pp = ppl[0]
+        tick = CHECK.replace('width="34" height="34"', 'width="26" height="26"')
+        pts = "".join(
+            '<div style="display:flex;align-items:center;gap:12px;padding:9px 0;border-top:1px solid #CDD5D3">'
+            + tick + '<div style="font-family:Montserrat;font-weight:700;font-size:23px;line-height:1.25">' + esc(t) + '</div></div>'
+            for t in pp.get("points", []))
+        return ('<div style="background:#E6EBEA;border-radius:16px;padding:26px;display:flex;gap:28px;align-items:center">'
+                + '<img src="' + (HERE / 'people' / pp['photo']).as_uri() + '" style="width:250px;height:250px;object-fit:cover;border-radius:14px;flex:0 0 auto">'
+                + '<div style="min-width:0;flex:1"><div style="font-family:Montserrat;font-weight:800;font-size:34px;line-height:1.1">' + esc(pp['name']) + '</div>'
+                + '<div style="font-family:Montserrat;font-weight:700;font-size:20px;letter-spacing:2px;color:#1E6E66;margin:8px 0 10px">' + esc(pp['role'].upper()) + '</div>'
+                + pts + '</div></div>')
+    cards = "".join(
+        '<div style="background:#E6EBEA;border-radius:16px;padding:18px;min-width:0">'
+        + '<img src="' + (HERE / 'people' / pp['photo']).as_uri() + '" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;display:block">'
+        + '<div style="font-family:Montserrat;font-weight:800;font-size:25px;line-height:1.15;margin-top:14px">' + esc(pp['name']) + '</div>'
+        + '<div style="font-family:Montserrat;font-weight:700;font-size:16px;letter-spacing:1.5px;color:#1E6E66;margin-top:6px">' + esc(pp['role'].upper()) + '</div>'
+        + '<div style="font-size:18px;line-height:1.4;color:#2E3433;margin-top:8px">' + esc(pp.get('line', '')) + '</div></div>'
+        for pp in ppl[:3])
+    return '<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px">' + cards + '</div>'
+
 def build(spec):
     accent = spec.get("accent", "#F16422")
     program = spec.get("program", "both")
@@ -63,6 +89,8 @@ def build(spec):
             <div style="font-family:Montserrat;font-weight:700;font-size:28px;line-height:1.3;color:#131313">{html.escape(stat["label"])}</div>
             <div style="font-size:17px;line-height:1.4;color:#4A5352">{html.escape(stat.get("source",""))}</div>
           </div></div>'''
+    elif spec.get("people"):
+        block = people_block(spec["people"])
     elif spec.get("columns"):
         cols = []
         for c in spec["columns"][:2]:

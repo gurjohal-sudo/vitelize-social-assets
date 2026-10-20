@@ -1,0 +1,49 @@
+[
+ {
+  "id": "2026-11-08",
+  "program": "peptide",
+  "music": true,
+  "music_style": "drive",
+  "scenes": [
+   {
+    "type": "hook",
+    "eyebrow": "WHO'S BEHIND THE MEDICINE",
+    "headline": "Meet our Medical Director, [[Dr. Micah Craig, MD.]]",
+    "hold": 3.5
+   },
+   {
+    "type": "list",
+    "title": "Dr. Craig:",
+    "items": [
+     "Board certified, Internal Medicine",
+     "Master's in Biochemistry",
+     "Sets every prescribing standard",
+     "Decides what's on the menu"
+    ],
+    "mark": "check",
+    "hold": 5.0
+   },
+   {
+    "type": "list",
+    "title": "Your gym never:",
+    "items": [
+     "Diagnoses",
+     "Prescribes",
+     "Handles medication"
+    ],
+    "mark": "cross",
+    "hold": 4.0
+   },
+   {
+    "type": "hook",
+    "eyebrow": "PEPTIDE PARTNER PROGRAM",
+    "headline": "Your trainers train. [[Our clinicians prescribe.]]",
+    "hold": 3.5
+   },
+   {
+    "type": "cta",
+    "hold": 5.0
+   }
+  ]
+ }
+]

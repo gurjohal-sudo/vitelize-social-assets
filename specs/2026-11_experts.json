@@ -1,0 +1,104 @@
+[
+ {
+  "id": "2026-11-02",
+  "program": "peptide",
+  "tag": "MEDICAL DIRECTOR",
+  "eyebrow": "WHO'S BEHIND THE MEDICINE",
+  "headline": "Meet the physician [[behind our menu.]]",
+  "people": [
+   {
+    "photo": "team-craig.jpg",
+    "name": "Dr. Micah Craig, MD",
+    "role": "Medical Director",
+    "points": [
+     "Board certified, Internal Medicine",
+     "Master's in Biochemistry",
+     "Sets every prescribing standard",
+     "Decides what's on the menu"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "2026-11-05_pm",
+  "program": "peptide",
+  "tag": "OUR STANDARD",
+  "eyebrow": "WHO DECIDES WHAT'S ON THE MENU",
+  "headline": "Four tests. [[Six therapies pass.]]",
+  "tiles": [
+   "A lawful pathway",
+   "One named patient",
+   "A clinician every time",
+   "Human evidence"
+  ],
+  "body": "Our Medical Director, Dr. Micah Craig, decides what reaches your members. Not a sales team."
+ },
+ {
+  "id": "2026-11-19",
+  "program": "glp1",
+  "tag": "SCIENTIFIC ADVISOR",
+  "eyebrow": "THE SCIENCE BEHIND THE PROGRAM",
+  "headline": "Protecting muscle on GLP-1s. [[It's what he researches.]]",
+  "people": [
+   {
+    "photo": "team-gray.jpg",
+    "name": "Prof. Stuart Gray",
+    "role": "Scientific Advisor",
+    "points": [
+     "Professor of Muscle and Metabolic Health",
+     "University of Glasgow",
+     "Investigator, LEAN-PREP trial"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "2026-11-20_pm",
+  "program": "glp1",
+  "tag": "THE RESEARCH",
+  "eyebrow": "WHAT LEAN-PREP IS TESTING",
+  "headline": "Can training protect muscle [[on a GLP-1?]]",
+  "tiles": [
+   "232 adults",
+   "4 groups",
+   "6 months",
+   "MRI muscle size"
+  ],
+  "body": "A randomised controlled trial. Protocol published in BMJ Open, 2026. Results not yet published."
+ },
+ {
+  "id": "2026-11-25_pm",
+  "program": "glp1",
+  "tag": "SCIENTIFIC ADVISOR",
+  "eyebrow": "WHY A MUSCLE SCIENTIST",
+  "headline": "Fast weight loss can cost muscle. [[That's his field.]]",
+  "body": "Prof. Stuart Gray's research at the University of Glasgow focuses on sarcopenia and how resistance exercise and nutrition counter it."
+ },
+ {
+  "id": "2026-12-16",
+  "program": "both",
+  "tag": "OUR TEAM",
+  "eyebrow": "WHO'S BEHIND VITELIZE",
+  "headline": "A physician, a scientist [[and an operator.]]",
+  "people": [
+   {
+    "photo": "team-craig.jpg",
+    "name": "Dr. Micah Craig, MD",
+    "role": "Medical Director",
+    "line": "Board certified in Internal Medicine. Owns our prescribing standards."
+   },
+   {
+    "photo": "team-gray.jpg",
+    "name": "Prof. Stuart Gray",
+    "role": "Scientific Advisor",
+    "line": "Professor of Muscle and Metabolic Health, University of Glasgow."
+   },
+   {
+    "photo": "team-cerf.jpg",
+    "name": "Jon Cerf",
+    "role": "Fitness and Nutrition Expert",
+    "line": "Founder of Core Progression Elite Personal Training, Denver, since 2008."
+   }
+  ]
+ }
+]
