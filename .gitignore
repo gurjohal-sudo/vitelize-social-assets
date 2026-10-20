@@ -1,2 +1,4 @@
 tools/voices/
 __pycache__/
+reels/**/_reel.html
+reels/**/_audio.wav
