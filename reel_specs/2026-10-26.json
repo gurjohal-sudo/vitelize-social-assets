@@ -44,6 +44,13 @@
     "hold": 5.0
    }
   ],
-  "music_style": "drive"
+  "music_style": "drive",
+  "photos": [
+   "studio-24.jpg",
+   "telehealth-32.jpg",
+   "clinician-28.jpg",
+   "strength-02.jpg",
+   "gym-11.jpg"
+  ]
  }
 ]

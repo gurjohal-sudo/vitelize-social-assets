@@ -1,0 +1,49 @@
+[
+ {
+  "id": "2026-11-02",
+  "program": "peptide",
+  "tag": "MEDICAL DIRECTOR",
+  "eyebrow": "WHO'S BEHIND THE MEDICINE",
+  "headline": "Meet the physician [[behind our menu.]]",
+  "people": [
+   {
+    "photo": "team-craig.jpg",
+    "name": "Dr. Micah Craig, MD",
+    "role": "Medical Director",
+    "points": [
+     "Board certified, Internal Medicine",
+     "Master's in Biochemistry",
+     "Sets every prescribing standard",
+     "Decides what's on the menu"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "2026-12-16",
+  "program": "both",
+  "tag": "OUR TEAM",
+  "eyebrow": "WHO'S BEHIND VITELIZE",
+  "headline": "A physician, a scientist [[and an operator.]]",
+  "people": [
+   {
+    "photo": "team-craig.jpg",
+    "name": "Dr. Micah Craig, MD",
+    "role": "Medical Director",
+    "line": "Board certified in Internal Medicine. Owns our prescribing standards."
+   },
+   {
+    "photo": "team-gray.jpg",
+    "name": "Prof. Stuart Gray",
+    "role": "Scientific Advisor",
+    "line": "Professor of Muscle and Metabolic Health, University of Glasgow."
+   },
+   {
+    "photo": "team-cerf.jpg",
+    "name": "Jon Cerf",
+    "role": "Fitness and Nutrition Expert",
+    "line": "Founder of Core Progression Elite Personal Training, Denver, since 2008."
+   }
+  ]
+ }
+]

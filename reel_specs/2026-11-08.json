@@ -44,6 +44,13 @@
     "type": "cta",
     "hold": 5.0
    }
+  ],
+  "photos": [
+   "people/team-craig.jpg",
+   "clinician-28.jpg",
+   "gym-13.jpg",
+   "strength-41.jpg",
+   "gym-19.jpg"
   ]
  }
 ]

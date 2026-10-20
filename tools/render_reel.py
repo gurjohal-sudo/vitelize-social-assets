@@ -11,7 +11,7 @@ Each spec:
     {"type":"cta",  "hold":4.5}
   Optional audio: "music": true adds the generated music bed; "vo" on any scene adds a voiceover line
   (scene length stretches to fit); "intro_vo" is spoken over the opening scenes without changing their length; "voice": "bf_emma" (British female, default; also bf_isabella, bf_alice, bf_lily, bm_george); "speed": 0.95.
-Every scene sits on a full-bleed photo from tools/photos with a slow push-in; "photos": [files] sets them per scene, "photo_tags" narrows the automatic choice.
+Every scene sits on a full-bleed photo from tools/photos with a slow push-in; "photos": [files] sets them per scene (a file in tools/photos, or "people/<file>" for a team headshot), "photo_tags" narrows the automatic choice.
 Content stays inside the Reels safe area (x 72 to 950, y 300 to 1500).
 """
 import json, sys, html, re, pathlib, subprocess
@@ -89,7 +89,7 @@ def build(spec):
         shade = ("linear-gradient(180deg,rgba(19,19,19,0.88) 0%,rgba(19,19,19,0.92) 100%)" if cta else
                  "linear-gradient(180deg,rgba(19,19,19,0.72) 0%,rgba(19,19,19,0.35) 30%,rgba(19,19,19,0.55) 55%,rgba(19,19,19,0.9) 100%)" if s["type"] == "hook" else
                  "linear-gradient(180deg,rgba(12,58,54,0.80) 0%,rgba(19,19,19,0.78) 100%)")
-        photo = (HERE / "photos" / photos[si]).as_uri()
+        photo = ((HERE / photos[si]) if "/" in photos[si] else (HERE / "photos" / photos[si])).as_uri()
         parts.append(f'<div class="scene" data-a="{a:.2f}" data-b="{b:.2f}" data-cta="{1 if cta else 0}" style="background:#131313">'
                      f'<img class="kb" src="{photo}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.06) saturate(0.85)">'
                      f'<div style="position:absolute;inset:0;background:{shade}"></div>'

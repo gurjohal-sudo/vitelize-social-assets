@@ -232,10 +232,12 @@ def photo_tags(spec):
 def choose_photo(spec, used):
     if spec.get("photo"):
         return spec["photo"]
+    # A post that names a real person never shows a different identifiable face (it could be mistaken for them).
     tags = photo_tags(spec)
     text = " ".join(str(spec.get(k, "")) for k in ("headline", "body", "eyebrow"))
     sensitive = bool(SENSITIVE.search(text)) or spec.get("program") in ("peptide", "glp1")
-    pool = [p for p in LIB if p["tag"] in tags and (not sensitive or not p["face"] or p["file"] in CLINICIAN_OK)]
+    names_person = bool(spec.get("people")) or bool(re.search(r"\bDr\.|\bProf\.|Medical Director|Scientific Advisor", text))
+    pool = [p for p in LIB if p["tag"] in tags and (not p["face"] or (not names_person and (not sensitive or p["file"] in CLINICIAN_OK)))]
     if not pool:
         pool = [p for p in LIB if not p["face"]]
     counts = {}
