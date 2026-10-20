@@ -10,7 +10,7 @@ Each spec:
     {"type":"stat", "value":"13M+", "label":"...", "source":"...", "hold":4.5}
     {"type":"cta",  "hold":4.5}
   Optional audio: "music": true adds the generated music bed; "vo" on any scene adds a voiceover line
-  (scene length stretches to fit); "voice": "bf_emma" (British female, default; also bf_isabella, bf_alice, bf_lily, bm_george); "speed": 0.95.
+  (scene length stretches to fit); "intro_vo" is spoken over the opening scenes without changing their length; "voice": "bf_emma" (British female, default; also bf_isabella, bf_alice, bf_lily, bm_george); "speed": 0.95.
 Content stays inside the Reels safe area (x 72 to 950, y 300 to 1500).
 """
 import json, sys, html, re, pathlib, subprocess
@@ -115,6 +115,8 @@ def prepare_audio(spec):
             s["hold"] = max(float(s.get("hold", 4.0)), len(x) / audio.SR + 0.9)
             clips.append((t + 0.35, x))
         t += float(s.get("hold", 4.0))
+    if spec.get("intro_vo"):  # spoken over the opening scenes without changing their timing
+        clips.append((float(spec.get("intro_at", 0.4)), audio.tts(spec["intro_vo"], voice, spec.get("speed", 0.95))))
     return clips
 
 def main(spec_path, out_dir):
@@ -123,7 +125,7 @@ def main(spec_path, out_dir):
     with sync_playwright() as p:
         br = p.chromium.launch(); pg = br.new_page(viewport={"width": W, "height": H})
         for spec in json.load(open(spec_path)):
-            clips = prepare_audio(spec) if (spec.get("music") or any(s.get("vo") for s in spec["scenes"])) else None
+            clips = prepare_audio(spec) if (spec.get("music") or spec.get("intro_vo") or any(s.get("vo") for s in spec["scenes"])) else None
             doc, total = build(spec)
             f = out / "_reel.html"; f.write_text(doc)
             pg.goto(f.as_uri()); pg.wait_for_load_state("networkidle"); pg.evaluate("document.fonts.ready")

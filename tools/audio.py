@@ -73,35 +73,50 @@ def _note(f, n, kind="pad"):
         w = np.sin(2 * np.pi * f * t)
     return w.astype(np.float32)
 
-def music(duration, bpm=96, seed=7):
-    """Original, calm, modern bed: warm pad chords, soft pulse, light kick. Royalty-free (generated)."""
+def music(duration, bpm=122, seed=7):
+    """Original upbeat, modern bed: driving four-on-the-floor kick, offbeat hats, claps on 2 and 4,
+    eighth-note bass, bright stabs over a I-V-vi-IV progression. Royalty-free (generated)."""
+    rng = np.random.default_rng(seed)
     n = int(duration * SR); out = np.zeros(n, np.float32)
     beat = 60 / bpm; bar = 4 * beat
-    prog = [(57, 60, 64), (53, 57, 60), (48, 52, 55), (55, 59, 62)]  # Am F C G
+    prog = [(60, 64, 67), (55, 59, 62), (57, 60, 64), (53, 57, 60)]  # C G Am F
     hz = lambda m: 440 * 2 ** ((m - 69) / 12)
-    b = 0
-    while b * bar < duration:
-        s = int(b * bar * SR); L = min(int(bar * SR), n - s)
-        if L <= 0: break
-        env = np.minimum(1, np.minimum(np.arange(L) / (0.4 * SR), (L - np.arange(L)) / (0.4 * SR))).astype(np.float32)
-        chord = prog[b % 4]
-        for m in chord:
-            out[s:s + L] += 0.06 * _note(hz(m), L) * env
-        out[s:s + L] += 0.05 * _note(hz(chord[0] - 12), L, "sine") * env
-        for k in range(8):  # eighth-note pluck on chord tones
-            ps = s + int(k * beat / 2 * SR); pl = min(int(0.35 * SR), n - ps)
-            if pl <= 0: continue
-            out[ps:ps + pl] += 0.035 * _note(hz(chord[k % 3] + 12), pl, "sine") * np.exp(-np.arange(pl) / (0.08 * SR))
-        for k in range(4):  # soft kick
-            ks = s + int(k * beat * SR); kl = min(int(0.25 * SR), n - ks)
-            if kl <= 0: continue
-            tt = np.arange(kl) / SR
-            out[ks:ks + kl] += 0.18 * np.sin(2 * np.pi * (50 + 60 * np.exp(-tt * 30)) * tt) * np.exp(-tt * 14)
-        b += 1
-    fade = int(1.5 * SR); out[-fade:] *= np.linspace(1, 0, fade); out[:int(0.5 * SR)] *= np.linspace(0, 1, int(0.5 * SR))
+    def add(start, sig):
+        s = int(start * SR)
+        if s >= n: return
+        e = min(n, s + len(sig)); out[s:e] += sig[:e - s]
+    def env(L, dec):
+        return np.exp(-np.arange(L) / (dec * SR)).astype(np.float32)
+    kickL = int(0.22 * SR); tk = np.arange(kickL) / SR
+    kick = (np.sin(2 * np.pi * (48 + 90 * np.exp(-tk * 35)) * tk) * np.exp(-tk * 12)).astype(np.float32)
+    hatL = int(0.05 * SR); hat = (rng.standard_normal(hatL) * env(hatL, 0.012)).astype(np.float32)
+    hat = np.diff(hat, prepend=0)  # crude high-pass for a crisp hat
+    clapL = int(0.18 * SR); clap = (rng.standard_normal(clapL) * env(clapL, 0.045)).astype(np.float32)
+    bars = int(np.ceil(duration / bar))
+    for b in range(bars):
+        t0 = b * bar; chord = prog[b % 4]
+        for k in range(4):
+            add(t0 + k * beat, 0.55 * kick)
+            add(t0 + k * beat + beat / 2, 0.10 * hat)
+            if k in (1, 3): add(t0 + k * beat, 0.16 * clap)
+        for k in range(16):  # sixteenth hats, light
+            if k % 2: add(t0 + k * beat / 4, 0.04 * hat)
+        for k in range(8):  # eighth-note bass, octave bounce
+            L = int(beat / 2 * SR * 0.9); t = np.arange(L) / SR
+            f = hz(chord[0] - 24 + (12 if k % 2 else 0))
+            sig = (np.tanh(2.2 * np.sin(2 * np.pi * f * t)) * env(L, 0.16)).astype(np.float32)
+            add(t0 + k * beat / 2, 0.16 * sig)
+        for k in (0, 1.5, 2.5, 3.5):  # syncopated bright stabs
+            L = int(0.22 * SR); t = np.arange(L) / SR
+            sig = sum(np.sign(np.sin(2 * np.pi * hz(m) * t)) * 0.5 + np.sin(2 * np.pi * hz(m + 12) * t) for m in chord)
+            add(t0 + k * beat, 0.035 * (sig * env(L, 0.07)).astype(np.float32))
+        L = int(bar * SR); t = np.arange(L) / SR  # soft pad underneath for warmth
+        pad = sum(np.sin(2 * np.pi * hz(m) * t) for m in chord).astype(np.float32)
+        add(t0, 0.025 * pad * np.minimum(1, np.minimum(t / 0.2, (bar - t) / 0.2)).astype(np.float32))
+    fade = int(1.2 * SR); out[-fade:] *= np.linspace(1, 0, fade); out[:int(0.15 * SR)] *= np.linspace(0, 1, int(0.15 * SR))
     return out / max(1e-6, np.abs(out).max()) * 0.9
 
-def mix(duration, vo_clips, with_music=True, music_db=-23, duck_db=-8):
+def mix(duration, vo_clips, with_music=True, music_db=-7, duck_db=-12):
     """vo_clips: list of (start_seconds, audio). Returns stereo int16 wav bytes."""
     n = int(duration * SR); vo = np.zeros(n, np.float32)
     for st, clip in vo_clips:
