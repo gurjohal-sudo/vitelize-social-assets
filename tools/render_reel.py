@@ -21,9 +21,9 @@ HERE = pathlib.Path(__file__).resolve().parent
 FPS = 30
 W, H = 1080, 1920
 DISCLOSURE = {
-    "peptide": "Prescribed by licensed clinicians only where clinically appropriate. Compounded medications are not FDA-approved. Available in eligible U.S. states. Partner earnings are not guaranteed.",
+    "peptide": "Individually prescribed by licensed clinicians only where clinically appropriate. Lawfully compounded. No BPC-157 or other gray-market peptides. Available in eligible U.S. states. Partner earnings are not guaranteed.",
     "glp1": "All therapy is prescribed by licensed clinicians only where clinically appropriate. Available in eligible U.S. states. Partner earnings are not guaranteed.",
-    "both": "All therapy is prescribed by licensed clinicians only where clinically appropriate. Compounded medications are not FDA-approved. Available in eligible U.S. states.",
+    "both": "All therapy is individually prescribed by licensed clinicians only where clinically appropriate. Lawfully compounded. No BPC-157 or other gray-market peptides. Available in eligible U.S. states.",
 }
 ORANGE, TEAL, TEAL_TXT, INK = "#F16422", "#36ACA0", "#2B8C82", "#131313"
 CHECK = f'<svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#5CC7BB" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>'
