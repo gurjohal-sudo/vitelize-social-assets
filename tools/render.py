@@ -32,9 +32,9 @@ LIB = json.load(open(PHOTOS / "photos.json"))
 USED_PATH = PHOTOS / "used.json"
 
 DISCLOSURE = {
-    "peptide": "Individually prescribed by licensed clinicians only where clinically appropriate. Lawfully compounded. No BPC-157 or other gray-market peptides. Available in eligible U.S. states.",
+    "peptide": "Individually prescribed by licensed clinicians only where clinically appropriate. Lawfully compounded. No gray-market peptides. Available in eligible U.S. states.",
     "glp1": "All therapy is prescribed by licensed clinicians only where clinically appropriate. Available in eligible U.S. states.",
-    "both": "All therapy is individually prescribed by licensed clinicians only where clinically appropriate. Lawfully compounded. No BPC-157 or other gray-market peptides. Available in eligible U.S. states.",
+    "both": "All therapy is individually prescribed by licensed clinicians only where clinically appropriate. Lawfully compounded. No gray-market peptides. Available in eligible U.S. states.",
 }
 
 # Brand palette: teal #36ACA0, orange #F16422, black #131313, grey #E6EBEA, white; secondary sky #AEE6F8, sage #B6E6AD.

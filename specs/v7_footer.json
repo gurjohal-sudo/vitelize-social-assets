@@ -1,0 +1,138 @@
+[
+ {
+  "id": "2026-10-24",
+  "program": "peptide",
+  "tag": "QUESTION FOR OPERATORS",
+  "eyebrow": "GYM AND STUDIO OWNERS",
+  "headline": "Where are your members getting their peptides? [[Tell us in the comments.]]",
+  "tiles": [
+   "A) Their doctor",
+   "B) Online sellers",
+   "C) A local clinic",
+   "D) No idea"
+  ],
+  "photo": "studio-23.jpg"
+ },
+ {
+  "id": "2026-10-25",
+  "program": "both",
+  "tag": "WELCOME",
+  "eyebrow": "VITELIZE HEALTH",
+  "headline": "Physician-led programs, [[inside the places people already train.]]",
+  "body": "Our licensed clinicians handle the medicine. You keep the relationship with your members, and your brand is the one they trust.",
+  "tiles": [
+   "Gyms",
+   "Boutique studios",
+   "Physiotherapy",
+   "Wellness providers"
+  ],
+  "photo": "telehealth-32.jpg"
+ },
+ {
+  "id": "2026-10-29",
+  "program": "peptide",
+  "tag": "OUR MENU",
+  "eyebrow": "THE PEPTIDE PROGRAM MENU",
+  "headline": "Six therapies. [[Short on purpose.]]",
+  "photo": "strength-02.jpg",
+  "body": "Every therapy is prescribed for one named patient after a licensed clinician's evaluation, and compounded by a licensed U.S. pharmacy.",
+  "tiles": [
+   "Licensed prescriber",
+   "One named patient",
+   "Licensed U.S. pharmacy",
+   "Nothing research-grade"
+  ]
+ },
+ {
+  "id": "2026-11-01",
+  "program": "peptide",
+  "tag": "WHAT WE WON'T DO",
+  "eyebrow": "OUR RULE",
+  "headline": "If a physician wouldn't prescribe it, [[it's not on our menu.]]",
+  "photo": "clinician-31.jpg",
+  "body": "None of the research peptides sold online has completed FDA's process to be lawfully compounded. An advisory vote is not an approval.",
+  "tiles": [
+   "No research chemicals",
+   "No unproven peptides",
+   "Physician prescribed",
+   "Licensed pharmacies"
+  ]
+ },
+ {
+  "id": "2026-11-02",
+  "program": "peptide",
+  "tag": "MEDICAL DIRECTOR",
+  "eyebrow": "WHO'S BEHIND THE MEDICINE",
+  "headline": "Meet the physician [[behind our menu.]]",
+  "people": [
+   {
+    "photo": "team-craig.jpg",
+    "name": "Dr. Micah Craig, MD",
+    "role": "Medical Director",
+    "points": [
+     "Board certified, Internal Medicine",
+     "Master's in Biochemistry",
+     "Sets every prescribing standard",
+     "Decides what's on the menu"
+    ]
+   }
+  ],
+  "photo": "clinician-28.jpg"
+ },
+ {
+  "id": "2026-11-04",
+  "program": "peptide",
+  "tag": "WHY WE PASS",
+  "eyebrow": "THE MOST-ASKED-ABOUT PEPTIDE",
+  "headline": "Popular in gyms. [[Barely studied in people.]]",
+  "stat": {
+   "value": "1 of 36",
+   "label": "published studies on it from 1993 to 2024 was in humans, with fewer than a dozen patients.",
+   "source": "Vasireddi N, et al. HSS Journal, 2025."
+  },
+  "photo": "equipment-36.jpg"
+ },
+ {
+  "id": "2026-11-05_pm",
+  "program": "peptide",
+  "tag": "OUR STANDARD",
+  "eyebrow": "WHO DECIDES WHAT'S ON THE MENU",
+  "headline": "Four tests. [[Six therapies pass.]]",
+  "tiles": [
+   "A lawful pathway",
+   "One named patient",
+   "A clinician every time",
+   "Human evidence"
+  ],
+  "body": "Our Medical Director, Dr. Micah Craig, decides what reaches your members. Not a sales team.",
+  "photo": "telehealth-32.jpg"
+ },
+ {
+  "id": "2026-12-16",
+  "program": "both",
+  "tag": "OUR TEAM",
+  "eyebrow": "WHO'S BEHIND VITELIZE",
+  "headline": "A physician, a scientist [[and an operator.]]",
+  "people": [
+   {
+    "photo": "team-craig.jpg",
+    "name": "Dr. Micah Craig, MD",
+    "role": "Medical Director",
+    "line": "Board certified in Internal Medicine. Owns our prescribing standards."
+   },
+   {
+    "photo": "team-gray.jpg",
+    "name": "Prof. Stuart Gray",
+    "role": "Scientific Advisor",
+    "line": "Professor of Muscle and Metabolic Health, University of Glasgow."
+   },
+   {
+    "photo": "team-cerf.jpg",
+    "name": "Jon Cerf",
+    "role": "Fitness and Nutrition Expert",
+    "line": "Founder of Core Progression Elite Personal Training, Denver, since 2008."
+   }
+  ],
+  "photo": "clinician-31.jpg"
+ }
+]
