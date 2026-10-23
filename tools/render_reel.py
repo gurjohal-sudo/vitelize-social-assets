@@ -21,8 +21,8 @@ HERE = pathlib.Path(__file__).resolve().parent
 FPS = 30
 W, H = 1080, 1920
 DISCLOSURE = {
-    "peptide": "Individually prescribed by licensed clinicians only where clinically appropriate. Lawfully compounded. No BPC-157 or other gray-market peptides. Available in eligible U.S. states. Partner earnings are not guaranteed.",
-    "glp1": "All therapy is prescribed by licensed clinicians only where clinically appropriate. Available in eligible U.S. states. Partner earnings are not guaranteed.",
+    "peptide": "Individually prescribed by licensed clinicians only where clinically appropriate. Lawfully compounded. No BPC-157 or other gray-market peptides. Available in eligible U.S. states.",
+    "glp1": "All therapy is prescribed by licensed clinicians only where clinically appropriate. Available in eligible U.S. states.",
     "both": "All therapy is individually prescribed by licensed clinicians only where clinically appropriate. Lawfully compounded. No BPC-157 or other gray-market peptides. Available in eligible U.S. states.",
 }
 ORANGE, TEAL, TEAL_TXT, INK = "#F16422", "#36ACA0", "#2B8C82", "#131313"

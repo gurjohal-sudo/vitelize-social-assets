@@ -22,8 +22,8 @@ from playwright.sync_api import sync_playwright
 
 HERE = pathlib.Path(__file__).resolve().parent
 DISCLOSURE = {
-    "peptide": "Individually prescribed by licensed clinicians only where clinically appropriate. Lawfully compounded. No BPC-157 or other gray-market peptides. Available in eligible U.S. states. Partner earnings are not guaranteed.",
-    "glp1": "All therapy is prescribed by licensed clinicians only where clinically appropriate. Available in eligible U.S. states. Partner earnings are not guaranteed.",
+    "peptide": "Individually prescribed by licensed clinicians only where clinically appropriate. Lawfully compounded. No BPC-157 or other gray-market peptides. Available in eligible U.S. states.",
+    "glp1": "All therapy is prescribed by licensed clinicians only where clinically appropriate. Available in eligible U.S. states.",
     "both": "All therapy is individually prescribed by licensed clinicians only where clinically appropriate. Lawfully compounded. No BPC-157 or other gray-market peptides. Available in eligible U.S. states.",
 }
 CROSS = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#D9531A" stroke-width="2.6" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg>'

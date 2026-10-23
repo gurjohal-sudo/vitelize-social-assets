@@ -1,0 +1,175 @@
+[
+ {
+  "id": "2026-10-24",
+  "program": "peptide",
+  "tag": "QUESTION FOR OPERATORS",
+  "eyebrow": "GYM AND STUDIO OWNERS",
+  "headline": "Where are your members getting their peptides? [[Tell us in the comments.]]",
+  "tiles": [
+   "A) Their doctor",
+   "B) Online sellers",
+   "C) A local clinic",
+   "D) No idea"
+  ],
+  "photo": "studio-23.jpg"
+ },
+ {
+  "id": "2026-10-29",
+  "program": "peptide",
+  "tag": "OUR MENU",
+  "eyebrow": "THE FULL PEPTIDE PROGRAM MENU",
+  "headline": "Six therapies. [[Short on purpose.]]",
+  "columns": [
+   {
+    "title": "ON OUR MENU",
+    "mark": "check",
+    "items": [
+     "Semaglutide",
+     "Tirzepatide",
+     "Sermorelin",
+     "NAD+",
+     "GHK-Cu (topical)",
+     "PT-141"
+    ]
+   },
+   {
+    "title": "NOT ON OUR MENU",
+    "mark": "cross",
+    "items": [
+     "BPC-157",
+     "TB-500",
+     "MOTS-c",
+     "Semax",
+     "Epitalon",
+     "Melanotan II"
+    ]
+   }
+  ],
+  "note": "Every therapy is prescribed for one named patient after a licensed clinician's evaluation, and compounded by a licensed U.S. pharmacy.",
+  "photo": "strength-02.jpg"
+ },
+ {
+  "id": "2026-11-01",
+  "program": "peptide",
+  "tag": "WHAT WE WON'T DO",
+  "eyebrow": "OUR RULE",
+  "headline": "If a physician wouldn't prescribe it, [[it's not on our menu.]]",
+  "columns": [
+   {
+    "title": "WE DO NOT OFFER",
+    "mark": "cross",
+    "items": [
+     "BPC-157",
+     "TB-500",
+     "MOTS-c",
+     "KPV"
+    ]
+   },
+   {
+    "title": "OR THESE",
+    "mark": "cross",
+    "items": [
+     "Semax",
+     "Epitalon",
+     "DSIP",
+     "Melanotan II"
+    ]
+   }
+  ],
+  "note": "None of these has completed FDA's process to be lawfully compounded. An advisory vote is not an approval.",
+  "photo": "clinician-31.jpg"
+ },
+ {
+  "id": "2026-11-02",
+  "program": "peptide",
+  "tag": "MEDICAL DIRECTOR",
+  "eyebrow": "WHO'S BEHIND THE MEDICINE",
+  "headline": "Meet the physician [[behind our menu.]]",
+  "people": [
+   {
+    "photo": "team-craig.jpg",
+    "name": "Dr. Micah Craig, MD",
+    "role": "Medical Director",
+    "points": [
+     "Board certified, Internal Medicine",
+     "Master's in Biochemistry",
+     "Sets every prescribing standard",
+     "Decides what's on the menu"
+    ]
+   }
+  ],
+  "photo": "clinician-28.jpg"
+ },
+ {
+  "id": "2026-11-04",
+  "program": "peptide",
+  "tag": "WHY WE PASS",
+  "eyebrow": "THE BPC-157 QUESTION",
+  "headline": "Popular in gyms. [[Barely studied in people.]]",
+  "stat": {
+   "value": "1 of 36",
+   "label": "published BPC-157 studies from 1993 to 2024 was in humans, with fewer than a dozen patients.",
+   "source": "Vasireddi N, et al. Emerging use of BPC-157 in orthopaedic sports medicine: a systematic review. HSS Journal, 2025."
+  },
+  "photo": "equipment-36.jpg"
+ },
+ {
+  "id": "2026-11-05_pm",
+  "program": "peptide",
+  "tag": "OUR STANDARD",
+  "eyebrow": "WHO DECIDES WHAT'S ON THE MENU",
+  "headline": "Four tests. [[Six therapies pass.]]",
+  "tiles": [
+   "A lawful pathway",
+   "One named patient",
+   "A clinician every time",
+   "Human evidence"
+  ],
+  "body": "Our Medical Director, Dr. Micah Craig, decides what reaches your members. Not a sales team.",
+  "photo": "telehealth-32.jpg"
+ },
+ {
+  "id": "2026-11-19",
+  "program": "glp1",
+  "tag": "SCIENTIFIC ADVISOR",
+  "eyebrow": "THE SCIENCE BEHIND THE PROGRAM",
+  "headline": "Protecting muscle on GLP-1s. [[It's what he researches.]]",
+  "people": [
+   {
+    "photo": "team-gray.jpg",
+    "name": "Prof. Stuart Gray",
+    "role": "Scientific Advisor",
+    "points": [
+     "Professor of Muscle and Metabolic Health",
+     "University of Glasgow",
+     "Investigator, LEAN-PREP trial"
+    ]
+   }
+  ],
+  "photo": "strength-44.jpg"
+ },
+ {
+  "id": "2026-11-20_pm",
+  "program": "glp1",
+  "tag": "THE RESEARCH",
+  "eyebrow": "WHAT LEAN-PREP IS TESTING",
+  "headline": "Can training protect muscle [[on a GLP-1?]]",
+  "tiles": [
+   "232 adults",
+   "4 groups",
+   "6 months",
+   "MRI muscle size"
+  ],
+  "body": "A randomised controlled trial. Protocol published in BMJ Open, 2026. Results not yet published.",
+  "photo": "strength-48.jpg"
+ },
+ {
+  "id": "2026-11-25_pm",
+  "program": "glp1",
+  "tag": "SCIENTIFIC ADVISOR",
+  "eyebrow": "WHY A MUSCLE SCIENTIST",
+  "headline": "Fast weight loss can cost muscle. [[That's his field.]]",
+  "body": "Prof. Stuart Gray's research at the University of Glasgow focuses on sarcopenia and how resistance exercise and nutrition counter it.",
+  "photo": "strength-39.jpg"
+ }
+]
