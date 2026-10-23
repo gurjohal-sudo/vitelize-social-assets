@@ -1,0 +1,45 @@
+[
+ {
+  "id": "2026-10-29",
+  "program": "peptide",
+  "tag": "OUR MENU",
+  "eyebrow": "THE PEPTIDE PROGRAM MENU",
+  "headline": "Six therapies. [[Short on purpose.]]",
+  "photo": "strength-02.jpg",
+  "body": "Every therapy is prescribed for one named patient after a licensed clinician's evaluation, and compounded by a licensed U.S. pharmacy.",
+  "tiles": [
+   "Licensed prescriber",
+   "One named patient",
+   "Licensed U.S. pharmacy",
+   "Nothing research-grade"
+  ]
+ },
+ {
+  "id": "2026-11-01",
+  "program": "peptide",
+  "tag": "WHAT WE WON'T DO",
+  "eyebrow": "OUR RULE",
+  "headline": "If a physician wouldn't prescribe it, [[it's not on our menu.]]",
+  "photo": "clinician-31.jpg",
+  "body": "None of the research peptides sold online has completed FDA's process to be lawfully compounded. An advisory vote is not an approval.",
+  "tiles": [
+   "No research chemicals",
+   "No unproven peptides",
+   "Physician prescribed",
+   "Licensed pharmacies"
+  ]
+ },
+ {
+  "id": "2026-11-04",
+  "program": "peptide",
+  "tag": "WHY WE PASS",
+  "eyebrow": "THE MOST-ASKED-ABOUT PEPTIDE",
+  "headline": "Popular in gyms. [[Barely studied in people.]]",
+  "stat": {
+   "value": "1 of 36",
+   "label": "published studies on it from 1993 to 2024 was in humans, with fewer than a dozen patients.",
+   "source": "Vasireddi N, et al. HSS Journal, 2025."
+  },
+  "photo": "equipment-36.jpg"
+ }
+]
