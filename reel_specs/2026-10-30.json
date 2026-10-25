@@ -1,0 +1,15 @@
+[
+ {
+  "id": "2026-10-30",
+  "program": "peptide",
+  "music": true,
+  "music_style": "drive",
+  "scenes": [
+   {"type": "hook", "eyebrow": "FOR GYM AND STUDIO OWNERS", "headline": "What the Peptide Program asks of a partner, [[in full.]]", "hold": 3.5},
+   {"type": "list", "title": "What we ask:", "items": ["Digital placement", "Member communications", "In-facility presence", "A staff introduction"], "mark": "check", "hold": 5.0},
+   {"type": "list", "title": "What we handle:", "items": ["We supply every asset", "We never touch your list", "Shipped at our cost", "Nothing clinical"], "mark": "check", "hold": 5.0},
+   {"type": "hook", "eyebrow": "PEPTIDE PARTNER PROGRAM", "headline": "That's the whole list. [[Your gym earns a recurring share of every order.]]", "hold": 4.0},
+   {"type": "cta", "hold": 5.0}
+  ]
+ }
+]

@@ -1,0 +1,45 @@
+[
+ {
+  "id": "2026-10-28",
+  "program": "peptide",
+  "tag": "PARTNER PROGRAM",
+  "eyebrow": "FOR GYM AND STUDIO OWNERS",
+  "headline": "Thinking about adding peptides to your gym? [[Ask who the clinic is.]]",
+  "columns": [
+   {
+    "title": "SOME PROGRAMS",
+    "mark": "cross",
+    "items": [
+     "Your gym is the clinic",
+     "You set the price",
+     "You take the payment",
+     "You own the patient relationship"
+    ]
+   },
+   {
+    "title": "VITELIZE",
+    "mark": "check",
+    "items": [
+     "Licensed clinicians screen",
+     "Licensed clinicians prescribe",
+     "We keep the clinical record",
+     "Your team trains people"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "2026-10-31",
+  "program": "peptide",
+  "tag": "PARTNER PROGRAM",
+  "eyebrow": "FOR GYM AND STUDIO OWNERS",
+  "headline": "Peptide programs run month to month. [[Retention, with a revenue line attached.]]",
+  "body": "You earn a recurring share of every order for as long as members stay on program.",
+  "tiles": [
+   "Recurring order share",
+   "Runs month to month"
+  ],
+  "layout": "splittop",
+  "photo": "gym-55.jpg"
+ }
+]
