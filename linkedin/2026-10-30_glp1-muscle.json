@@ -1,0 +1,81 @@
+[
+ {
+  "type": "cover",
+  "headline": "GLP-1 therapy has a [[muscle problem.]]",
+  "body": "Why the next phase of obesity care belongs in the gym."
+ },
+ {
+  "type": "point",
+  "headline": "Up to [[39%]] of weight lost can be lean mass.",
+  "body": "In the STEP 1 body composition substudy, lean mass made up as much as 39% of total weight lost on GLP-1 therapy alone.",
+  "source": "Wilding et al., N Engl J Med 2021"
+ },
+ {
+  "type": "point",
+  "headline": "Stopping brings [[most of it back.]]",
+  "body": "One year after treatment ended in the STEP 1 extension, participants had regained two-thirds of the weight they lost.",
+  "source": "Wilding et al., Diabetes Obes Metab 2022"
+ },
+ {
+  "type": "point",
+  "headline": "Medication plus exercise [[beats either alone.]]",
+  "body": "After an initial diet, GLP-1 therapy combined with structured exercise cut body-fat percentage about twice as much as either treatment on its own over one year.",
+  "source": "Lundgren et al., N Engl J Med 2021"
+ },
+ {
+  "type": "point",
+  "headline": "The open question [[is muscle.]]",
+  "body": "LEAN-PREP, a randomised trial at Dasman Diabetes Institute, is testing resistance exercise and protein in 232 adults starting GLP-1 therapy.",
+  "source": "Alawadhi et al., BMJ Open 2026"
+ },
+ {
+  "type": "person",
+  "eyebrow": "OUR SCIENTIFIC ADVISOR",
+  "name": "Prof. Stuart Gray",
+  "role": "Professor of Muscle and Metabolic Health, University of Glasgow",
+  "points": [
+   "Research: sarcopenia, resistance exercise and nutrition",
+   "Investigator on the LEAN-PREP trial"
+  ],
+  "photo": "team-gray.jpg"
+ },
+ {
+  "type": "person",
+  "eyebrow": "OUR MEDICAL DIRECTOR",
+  "name": "Dr. Micah Craig, MD",
+  "role": "Board certified in Internal Medicine, Master's in Biochemistry",
+  "points": [
+   "Sets our prescribing standards",
+   "Owns the lab schedule and monitoring protocols"
+  ],
+  "photo": "team-craig.jpg"
+ },
+ {
+  "type": "bullets",
+  "headline": "The model: [[the clinic inside the gym.]]",
+  "items": [
+   "Physician-supervised GLP-1 therapy, labs at every consult",
+   "Training with the gym's own coaches",
+   "Custom meal plan and protein",
+   "Body composition tracking",
+   "Vitelize funds the advertising that brings new patients in"
+  ]
+ },
+ {
+  "type": "recap",
+  "items": [
+   "GLP-1 therapy alone can cost lean mass.",
+   "Stopping brings most of the weight back.",
+   "Medication plus exercise outperforms either.",
+   "Resistance training and protein are the variables to get right.",
+   "Gyms already deliver the training."
+  ]
+ },
+ {
+  "type": "cta",
+  "headline": "Run a gym or a [[multi-site network?]]",
+  "body": "Book a 15-minute partner call:<br><b>vitelizehealth.com/partners/start</b>",
+  "note": "For studios and clinics, ask about our physician-set Peptide Program.",
+  "sources": "Sources: Wilding et al., N Engl J Med 2021;384:989-1002 (STEP 1). Wilding et al., Diabetes Obes Metab 2022;24:1553-1564 (STEP 1 extension). Lundgren et al., N Engl J Med 2021;384:1719-1730. Alawadhi et al., BMJ Open 2026;16:e116911 (LEAN-PREP protocol). All therapy is prescribed by licensed clinicians only where clinically appropriate. Available in eligible U.S. states."
+ }
+]
