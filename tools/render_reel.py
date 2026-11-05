@@ -9,7 +9,7 @@ Each spec:
     {"type":"list", "title":"...", "items":["...", "..."], "mark":"check"|"cross", "hold":4.5}
     {"type":"stat", "value":"13M+", "label":"...", "source":"...", "hold":4.5}
     {"type":"cta",  "hold":4.5}
-  Optional audio: "music": true adds the generated music bed; "vo" on any scene adds a voiceover line
+  Optional audio: "music": true adds the music bed ("music_style": "downtempo" or "athletic", licensed Stable Audio beds in tools/music/); "vo" on any scene adds a voiceover line
   (scene length stretches to fit); "intro_vo" is spoken over the opening scenes without changing their length; "voice": "bf_emma" (British female, default; also bf_isabella, bf_alice, bf_lily, bm_george); "speed": 0.95.
 Every scene sits on a full-bleed photo from tools/photos with a slow push-in; "photos": [files] sets them per scene (a file in tools/photos, or "people/<file>" for a team headshot), "photo_tags" narrows the automatic choice.
 Content stays inside the Reels safe area (x 72 to 950, y 300 to 1500).
@@ -155,7 +155,7 @@ def main(spec_path, out_dir):
             mp4 = out / f"{spec['id']}.mp4"
             if clips is not None:
                 import audio
-                wav = out / "_audio.wav"; wav.write_bytes(audio.mix(total, clips, with_music=spec.get("music", False), style=spec.get("music_style", "drive")))
+                wav = out / "_audio.wav"; wav.write_bytes(audio.mix(total, clips, with_music=spec.get("music", False), style=spec.get("music_style", "downtempo")))
                 ain = ["-i", str(wav)]
             else:
                 ain = ["-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=44100"]

@@ -26,7 +26,7 @@ Purpose: attach a branded 1080 x 1350 image to each Vitelize Health Facebook pos
 1. From the week's posts, pick the two with the strongest hooks or lists for Reels (prefer one Peptide Program post and, from November 11 onward, one GLP-1 plus Training post). Skip any post that is already a Reel. All other posts get images as above.
 2. Extra install: `pip install --break-system-packages soundfile numpy`. No voice model is needed.
 3. Write `reel_specs/<post-date>.json` in the format at the top of `tools/render_reel.py`, following `reel_specs/2026-10-26.json` as the approved model:
-   * `"music": true`, `"music_style": "drive"` (the high-energy 128 BPM bed in `tools/audio.py`).
+   * `"music": true` and a `"music_style"` that alternates Reel to Reel: `"downtempo"` (88 BPM, downtempo hip hop) and `"athletic"` (105 BPM, athletic percussive). Check the most recent spec in `reel_specs/` and use the other style. Prefer `"downtempo"` for partner revenue and founder-led posts and `"athletic"` for GLP-1 plus Training posts when the alternation allows. Never use `"drive"` (retired Nov 5, 2026).
    * No voiceover of any kind: never add `intro_vo` or a scene `vo`.
    * Scenes: hook, one or two lists, a closing hook, then cta. Use only the post's own words. 18 to 25 seconds total.
 4. Render: `python3 tools/render_reel.py reel_specs/<post-date>.json reels`. Check sample frames (ffmpeg) before publishing.

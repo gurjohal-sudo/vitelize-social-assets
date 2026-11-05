@@ -1,6 +1,7 @@
-"""Audio for Vitelize Reels: offline text-to-speech (Piper) and an original synthesized music bed.
+"""Audio for Vitelize Reels: offline text-to-speech and the music beds.
 
-Both are generated locally, so there are no music licensing or voice licensing issues.
+The two current beds in tools/music/ were generated with Stable Audio 3.0 under the Stability AI
+Community License (see tools/music/LICENSE_NOTE.md). The synthesized "drive" and "upbeat" beds are retired.
 Voices (Piper, from huggingface.co/rhasspy/piper-voices) are downloaded on first use into tools/voices/.
 """
 import io, wave, subprocess, pathlib, urllib.request
@@ -184,14 +185,40 @@ def music_drive(duration, bpm=128, seed=11):
     fade = int(1.0 * SR); out[-fade:] *= np.linspace(1, 0, fade); out[:int(0.05 * SR)] *= np.linspace(0, 1, int(0.05 * SR))
     return out / max(1e-6, np.abs(out).max()) * 0.95
 
-def mix(duration, vo_clips, with_music=True, music_db=-7, duck_db=-12, style="drive"):
-    """vo_clips: list of (start_seconds, audio). Returns stereo int16 wav bytes."""
+# Licensed music beds (chosen Nov 5, 2026). Generated with Stable Audio 3.0 Small Music under the
+# Stability AI Community License (Vitelize Health Inc. registered Nov 5, 2026; free commercial use
+# while annual revenue is under US$1M). Reels alternate between these two styles.
+BEDS = {
+    "downtempo": HERE / "music" / "downtempo_hiphop.flac",       # 88 BPM, take 3B
+    "athletic": HERE / "music" / "athletic_percussive.flac",     # 105 BPM, take 5B
+}
+
+def music_file(duration, path, xfade=1.5, fade_out=1.5):
+    """Decode a bed to mono float32 at SR, loop with a crossfade if the Reel is longer, trim and fade out."""
+    raw = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", str(path), "-f", "f32le", "-ac", "1", "-ar", str(SR), "-"],
+                         capture_output=True, check=True).stdout
+    src = np.frombuffer(raw, np.float32).copy()
+    n = int(duration * SR); out = src
+    xf = int(xfade * SR)
+    while len(out) < n:
+        ramp = np.linspace(0, 1, xf, dtype=np.float32)
+        out = np.concatenate([out[:-xf], out[-xf:] * (1 - ramp) + src[:xf] * ramp, src[xf:]])
+    out = out[:n].copy()
+    f = min(n, int(fade_out * SR)); out[-f:] *= np.linspace(1, 0, f, dtype=np.float32)
+    return out / max(1e-6, np.abs(out).max()) * 0.95
+
+def mix(duration, vo_clips, with_music=True, music_db=-7, duck_db=-12, style="downtempo"):
+    """vo_clips: list of (start_seconds, audio). style: "downtempo" or "athletic" (licensed beds),
+    or the legacy synthesized "drive" / "upbeat". Returns stereo int16 wav bytes."""
     n = int(duration * SR); vo = np.zeros(n, np.float32)
     for st, clip in vo_clips:
         s = int(st * SR); e = min(n, s + len(clip)); vo[s:e] += clip[:e - s]
     if with_music and not vo_clips:
         music_db = -1.0  # music-only Reels play the bed at full level
-    gen = music_drive if style == "drive" else music
+    if style in BEDS:
+        gen = lambda d: music_file(d, BEDS[style])
+    else:
+        gen = music_drive if style == "drive" else music
     bed = gen(duration) * 10 ** (music_db / 20) if with_music else np.zeros(n, np.float32)
     if with_music and vo_clips:  # duck music under speech
         active = np.convolve((np.abs(vo) > 0.01).astype(np.float32), np.ones(int(0.25 * SR)) / int(0.25 * SR), "same")
