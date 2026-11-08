@@ -1,0 +1,15 @@
+[
+ {
+  "id": "2026-11-11",
+  "program": "both",
+  "music": true,
+  "music_style": "downtempo",
+  "scenes": [
+   {"type": "hook", "eyebrow": "FOR GYM AND STUDIO OWNERS", "headline": "Who our partner program [[is built for.]]", "hold": 3.5},
+   {"type": "list", "title": "Built for:", "items": ["Single-site gyms", "Boutique studios", "Personal training businesses"], "mark": "check", "hold": 4.5},
+   {"type": "list", "title": "Built for:", "items": ["Physiotherapy clinics", "Wellness providers", "Online coaches"], "mark": "check", "hold": 4.5},
+   {"type": "hook", "eyebrow": "PARTNER PROGRAM", "headline": "If your clients trust you with their training or recovery, [[you already have what this program needs.]]", "hold": 4.5},
+   {"type": "cta", "hold": 5.0}
+  ]
+ }
+]

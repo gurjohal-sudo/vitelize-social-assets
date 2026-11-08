@@ -1,0 +1,15 @@
+[
+ {
+  "id": "2026-11-12",
+  "program": "glp1",
+  "music": true,
+  "music_style": "athletic",
+  "scenes": [
+   {"type": "hook", "eyebrow": "FOR GYM AND STUDIO OWNERS", "headline": "Most health programs sold online stop at the prescription. [[Ours starts on the gym floor.]]", "hold": 4.0},
+   {"type": "list", "title": "What protects muscle during any metabolic health program:", "items": ["Strength training", "The right protein"], "mark": "check", "hold": 4.5},
+   {"type": "hook", "eyebrow": "THE GYM FLOOR", "headline": "That's exactly what [[a good gym already delivers.]]", "hold": 3.5},
+   {"type": "hook", "eyebrow": "PARTNER PROGRAM", "headline": "We put the clinician and the coach [[on the same team.]]", "hold": 4.0},
+   {"type": "cta", "hold": 5.0}
+  ]
+ }
+]

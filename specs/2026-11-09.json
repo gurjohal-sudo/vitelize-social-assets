@@ -1,0 +1,32 @@
+[
+ {
+  "id": "2026-11-13",
+  "program": "both",
+  "tag": "PARTNER PROGRAM",
+  "eyebrow": "FOR GYM AND STUDIO OWNERS",
+  "headline": "What your member experiences [[in our partner program.]]",
+  "body": "No office visit. Your staff never handles anything clinical.",
+  "tiles": [
+   "Scan your QR code",
+   "Virtual consultation",
+   "Clinician review",
+   "Ships to door"
+  ],
+  "photo": "studio-26.jpg"
+ },
+ {
+  "id": "2026-11-14",
+  "program": "both",
+  "tag": "QUICK QUESTION",
+  "eyebrow": "GYM OWNERS AND COACHES",
+  "headline": "What does your team say when members ask about [[metabolic health or recovery?]]",
+  "body": "Drop your letter in the comments.",
+  "tiles": [
+   "A) Their doctor",
+   "B) General advice",
+   "C) Avoid the topic",
+   "D) Have a program"
+  ],
+  "photo": "physio-46.jpg"
+ }
+]
