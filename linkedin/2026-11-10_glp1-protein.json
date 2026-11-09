@@ -1,0 +1,77 @@
+[
+ {
+  "type": "cover",
+  "headline": "Appetite drops. [[Protein needs don't.]]",
+  "body": "Why nutrition is half the job in GLP-1 care.",
+  "photo": "coaching-15.jpg"
+ },
+ {
+  "type": "point",
+  "headline": "Intake falls [[16% to 39%.]]",
+  "body": "GLP-1 therapy reduces energy intake by 16% to 39% compared with placebo, through changes in hunger, fullness and cravings.",
+  "source": "Mozaffarian et al., Am J Clin Nutr 2025"
+ },
+ {
+  "type": "point",
+  "headline": "Less food can mean [[less muscle.]]",
+  "body": "Four expert societies list muscle and bone loss among the core challenges of GLP-1 care, alongside nutrient gaps from eating less.",
+  "source": "Mozaffarian et al., Am J Clin Nutr 2025"
+ },
+ {
+  "type": "point",
+  "headline": "The protein target [[moves up.]]",
+  "body": "The general adult allowance is 0.8 g/kg a day. Targets of 1.2 to 1.6 g/kg have been proposed during active weight reduction, set for each patient by a clinician.",
+  "source": "Mozaffarian et al., Am J Clin Nutr 2025"
+ },
+ {
+  "type": "point",
+  "headline": "Training is [[the other half.]]",
+  "body": "The advisory says GLP-1 therapy should be prescribed with structured exercise: strength training at least 3 times a week plus 150 minutes of moderate aerobic activity.",
+  "source": "Mozaffarian et al., Am J Clin Nutr 2025"
+ },
+ {
+  "type": "point",
+  "headline": "Measure it, [[don't guess.]]",
+  "body": "The advisory calls for checking strength, function and body composition, and names bioelectrical impedance as a practical point-of-care tool.",
+  "source": "Mozaffarian et al., Am J Clin Nutr 2025"
+ },
+ {
+  "type": "person",
+  "eyebrow": "OUR MEDICAL DIRECTOR",
+  "name": "Dr. Micah Craig, MD",
+  "role": "Board certified in Internal Medicine, Master's in Biochemistry",
+  "points": [
+   "Sets our prescribing standards",
+   "Owns the lab schedule and monitoring protocols"
+  ],
+  "photo": "team-craig.jpg"
+ },
+ {
+  "type": "bullets",
+  "headline": "How we build [[nutrition into care.]]",
+  "items": [
+   "Custom meal plan at enrolment, reviewed monthly",
+   "Monthly protein supply included",
+   "Training with the gym's own coaches",
+   "Body composition logged and shared with each patient",
+   "Physician-supervised GLP-1 therapy with labs at each MD consult"
+  ]
+ },
+ {
+  "type": "recap",
+  "items": [
+   "GLP-1 therapy cuts how much people eat.",
+   "Eating less can cost muscle and nutrients.",
+   "Protein targets rise during weight reduction.",
+   "Strength training belongs in the prescription.",
+   "Body composition shows what the scale misses."
+  ]
+ },
+ {
+  "type": "cta",
+  "headline": "Run a gym or a [[multi-site network?]]",
+  "body": "Book a 15-minute partner call:<br><b>vitelizehealth.com/partners/glp1-training</b>",
+  "note": "For studios and clinics, ask about our physician-set Peptide Program.",
+  "sources": "Source: Mozaffarian et al. Nutritional priorities to support GLP-1 therapy for obesity: a joint Advisory from the American College of Lifestyle Medicine, the American Society for Nutrition, the Obesity Medicine Association, and The Obesity Society. Am J Clin Nutr 2025;122:344-367. doi:10.1016/j.ajcnut.2025.04.023. All therapy is prescribed by licensed clinicians only where clinically appropriate. Available in eligible U.S. states."
+ }
+]
