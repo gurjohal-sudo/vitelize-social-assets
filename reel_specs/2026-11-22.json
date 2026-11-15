@@ -1,0 +1,15 @@
+[
+ {
+  "id": "2026-11-22",
+  "program": "glp1",
+  "music": true,
+  "music_style": "athletic",
+  "scenes": [
+   {"type": "hook", "eyebrow": "METABOLIC HEALTH AND TRAINING", "headline": "Protein is the part of a metabolic health plan [[most people get wrong.]]", "hold": 4.0},
+   {"type": "hook", "eyebrow": "WHEN APPETITE CHANGES", "headline": "Hitting a protein target gets harder, [[and muscle is what pays for it.]]", "hold": 4.0},
+   {"type": "list", "title": "Every patient in our program gets:", "items": ["A custom meal plan at enrolment", "Reviewed every month", "A monthly supply of protein, all included"], "mark": "check", "hold": 5.0},
+   {"type": "hook", "eyebrow": "FOR GYM OWNERS", "headline": "Individual targets are set by each patient's care team, [[so your trainers never have to piece it together.]]", "hold": 4.5},
+   {"type": "cta", "hold": 5.0}
+  ]
+ }
+]

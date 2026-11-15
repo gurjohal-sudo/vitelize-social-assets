@@ -1,0 +1,15 @@
+[
+ {
+  "id": "2026-11-17",
+  "program": "both",
+  "music": true,
+  "music_style": "downtempo",
+  "scenes": [
+   {"type": "hook", "eyebrow": "FOR GYM OWNERS", "headline": "Five questions to ask any company [[pitching a health program to your gym.]]", "hold": 4.0},
+   {"type": "list", "title": "Ask:", "items": ["Who prescribes, and who holds the clinical record?", "Who sets the price and collects payment for the therapy?", "How are patients monitored?"], "mark": "check", "hold": 5.0},
+   {"type": "list", "title": "Then ask:", "items": ["What happens when a patient finishes their plan?", "Who pays to bring new people in?"], "mark": "check", "hold": 4.5},
+   {"type": "hook", "eyebrow": "PARTNER PROGRAM", "headline": "The answers tell you whether you're gaining a partner [[or becoming a clinic.]]", "hold": 4.0},
+   {"type": "cta", "hold": 5.0}
+  ]
+ }
+]
