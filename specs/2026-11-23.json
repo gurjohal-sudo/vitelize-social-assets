@@ -1,0 +1,42 @@
+[
+ {
+  "id": "2026-11-24",
+  "program": "both",
+  "tag": "OPERATOR QUESTION",
+  "eyebrow": "IS IT A LIABILITY FOR MY GYM?",
+  "headline": "A liability for your gym? [[It depends who's running the medicine.]]",
+  "body": "Licensed physicians and nurse practitioners do the screening, prescribing and record keeping. Your team doesn't diagnose, prescribe, stock or dispense anything."
+ },
+ {
+  "id": "2026-11-25",
+  "program": "both",
+  "tag": "OPERATOR QUESTION",
+  "eyebrow": "PHYSICIAN-LED PROGRAM",
+  "headline": "What if a member isn't a good fit for treatment? [[Then they don't get it.]]",
+  "body": "Every person is evaluated by a licensed clinician first. Your gym never has to make that call.",
+  "photo": "clinician-31.jpg",
+  "theme": "grey"
+ },
+ {
+  "id": "2026-11-26",
+  "program": "both",
+  "tag": "THANK YOU",
+  "eyebrow": "FROM ALL OF US",
+  "headline": "Happy Thanksgiving [[from the Vitelize team.]]",
+  "body": "Thank you to the gym owners, trainers and wellness providers who've trusted us inside their facilities."
+ },
+ {
+  "id": "2026-11-27",
+  "program": "both",
+  "eyebrow": "ASK BEFORE ADDING A HEALTH PROGRAM",
+  "headline": "Who holds the patient data? [[In our partner program, you don't.]]",
+  "body": "Medical intake, prescriptions and records stay with our licensed clinicians. And your member list stays yours."
+ },
+ {
+  "id": "2026-11-28",
+  "program": "both",
+  "eyebrow": "WILL NEW HEALTH TREATMENTS PUT GYMS OUT OF BUSINESS?",
+  "headline": "Treatment doesn't replace your gym. [[It creates people who need one.]]",
+  "body": "More people than ever have a clinical reason to strength train, and most of them aren't gym members yet."
+ }
+]

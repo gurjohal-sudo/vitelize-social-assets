@@ -1,0 +1,14 @@
+[
+ {
+  "id": "2026-11-29",
+  "program": "both",
+  "music": true,
+  "music_style": "athletic",
+  "scenes": [
+   {"type": "hook", "eyebrow": "SOMETHING MOST PEOPLE DON'T KNOW", "headline": "Skeletal muscle is the main place your body [[clears blood sugar after a meal.]]", "hold": 5.0},
+   {"type": "list", "title": "Holding on to muscle isn't about looks. It's about:", "items": ["Metabolic health", "Clearing blood sugar after a meal"], "mark": "check", "hold": 5.0},
+   {"type": "hook", "eyebrow": "FOR GYM OWNERS", "headline": "Resistance training is how you protect it, [[and that's what your floor is for.]]", "hold": 5.0},
+   {"type": "cta", "hold": 5.0}
+  ]
+ }
+]

@@ -1,0 +1,15 @@
+[
+ {
+  "id": "2026-11-23",
+  "program": "both",
+  "music": true,
+  "music_style": "downtempo",
+  "scenes": [
+   {"type": "hook", "eyebrow": "OPERATOR QUESTION", "headline": "What does my staff [[actually have to say?]]", "hold": 3.5},
+   {"type": "list", "title": "Stays with Vitelize's licensed clinicians:", "items": ["Screening", "Prescribing", "Fulfilment", "Patient records"], "mark": "check", "hold": 4.5},
+   {"type": "list", "title": "Your team never:", "items": ["Gives medical advice", "Recommends a therapy", "Handles an order"], "mark": "cross", "hold": 4.5},
+   {"type": "hook", "eyebrow": "ONE SENTENCE. THAT'S IT.", "headline": "\"If you're interested, our partner's physicians can evaluate you. [[Here's our page.]]\"", "hold": 5.0},
+   {"type": "cta", "hold": 5.0}
+  ]
+ }
+]
