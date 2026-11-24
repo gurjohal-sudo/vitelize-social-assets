@@ -1,0 +1,77 @@
+[
+ {
+  "type": "cover",
+  "headline": "Strength is a [[vital sign.]]",
+  "body": "Why muscle function belongs at the centre of GLP-1 care.",
+  "photo": "strength-41.jpg"
+ },
+ {
+  "type": "point",
+  "headline": "Weaker grip, [[higher risk.]]",
+  "body": "Across 139,691 adults in 17 countries, every 5&nbsp;kg lower grip strength carried a 16% higher risk of death from any cause.",
+  "source": "Leong et al., Lancet 2015"
+ },
+ {
+  "type": "point",
+  "headline": "It outranked [[blood pressure.]]",
+  "body": "In the same study, grip strength predicted all-cause and cardiovascular death more strongly than systolic blood pressure.",
+  "source": "Leong et al., Lancet 2015"
+ },
+ {
+  "type": "point",
+  "headline": "Sarcopenia starts with [[low strength.]]",
+  "body": "The revised European consensus makes low muscle strength the key sign of sarcopenia, confirmed by low muscle quantity or quality.",
+  "source": "Cruz-Jentoft et al., Age Ageing 2019"
+ },
+ {
+  "type": "point",
+  "headline": "Excess weight can [[hide weak muscle.]]",
+  "body": "ESPEN and EASO define sarcopenic obesity as excess fat with low muscle mass and function, and advise assessing muscle function first.",
+  "source": "Donini et al., Obes Facts 2022"
+ },
+ {
+  "type": "point",
+  "headline": "Training [[moves the needle.]]",
+  "body": "Across 73 trials and 3,059 older adults, progressive resistance training had a large effect on strength and made rising from a chair easier.",
+  "source": "Liu and Latham, Cochrane Database Syst Rev 2009"
+ },
+ {
+  "type": "person",
+  "eyebrow": "OUR SCIENTIFIC ADVISOR",
+  "name": "Prof. Stuart Gray",
+  "role": "Professor of Muscle and Metabolic Health, University of Glasgow",
+  "points": [
+   "Research: sarcopenia, resistance exercise and nutrition",
+   "Investigator on the LEAN-PREP trial"
+  ],
+  "photo": "team-gray.jpg"
+ },
+ {
+  "type": "bullets",
+  "headline": "How we build [[strength into care.]]",
+  "items": [
+   "Physician-supervised GLP-1 therapy, metabolic panel at each MD consult",
+   "Coached training once or twice a week toward 150 minutes",
+   "Custom meal plan and monthly protein supply",
+   "Body composition logged and shared with each patient",
+   "Physician-guided tapering and a maintenance phase"
+  ]
+ },
+ {
+  "type": "recap",
+  "items": [
+   "Grip strength tracks with mortality risk.",
+   "Low strength is the key sign of sarcopenia.",
+   "Obesity can mask low muscle function.",
+   "Resistance training reliably builds strength.",
+   "Gyms already deliver that training."
+  ]
+ },
+ {
+  "type": "cta",
+  "headline": "Run a gym or a [[multi-site network?]]",
+  "body": "Book a 15-minute partner call:<br><b>vitelizehealth.com/partners/glp1-training</b>",
+  "note": "For studios and clinics, ask about our physician-set Peptide Program.",
+  "sources": "Sources: Leong et al., Lancet 2015;386:266-273 (PURE). Cruz-Jentoft et al., Age Ageing 2019;48:16-31 (EWGSOP2). Donini et al., Obes Facts 2022;15:321-335 (ESPEN and EASO). Liu and Latham, Cochrane Database Syst Rev 2009;CD002759. All therapy is prescribed by licensed clinicians only where clinically appropriate. Available in eligible U.S. states."
+ }
+]
